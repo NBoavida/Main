@@ -1,0 +1,30 @@
+DEV
+WDAZSP01 --sharepoint
+WDAZVS01 --- visual studio 
+
+SDAZIIS01.ageaspt.dev ---IIS
+SDAZSPF01 --- Sharepoint Front end
+SDAZSPA01 --- Sharepoint Aplication 
+SDAZAPP01 --- APPS 
+SDAZSQL01 --- SQL
+SDAZTFS01
+SDAZLNX01 -- Linux 
+
+QUALIDADE
+SQAZIIS01.ageaspt.dev
+SQAZSPF01
+SQAZSPA01
+SQAZAPP01
+SQAZSQL01
+
+PRODUCAO
+SAZIIS01.ageaspt.dev
+SAZSPF01
+SAZSPA01
+SAZAPP01
+SAZSQL01
+SAZLNX01
+
+
+DR
+SR....

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PersistentVM xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ConfigurationSets>
+    <ConfigurationSet xsi:type="NetworkConfigurationSet">
+      <ConfigurationSetType>NetworkConfiguration</ConfigurationSetType>
+      <InputEndpoints>
+        <InputEndpoint>
+          <LocalPort>5986</LocalPort>
+          <Name>PowerShell</Name>
+          <Port>5986</Port>
+          <Protocol>tcp</Protocol>
+          <Vip>23.101.67.137</Vip>
+          <EnableDirectServerReturn>false</EnableDirectServerReturn>
+          <IdleTimeoutInMinutes xsi:nil="true" />
+        </InputEndpoint>
+        <InputEndpoint>
+          <LocalPort>3389</LocalPort>
+          <Name>Remote Desktop</Name>
+          <Port>64143</Port>
+          <Protocol>tcp</Protocol>
+          <Vip>23.101.67.137</Vip>
+          <EnableDirectServerReturn>false</EnableDirectServerReturn>
+          <IdleTimeoutInMinutes xsi:nil="true" />
+        </InputEndpoint>
+        <InputEndpoint>
+          <LocalPort>8530</LocalPort>
+          <Name>Wsus</Name>
+          <Port>8530</Port>
+          <Protocol>tcp</Protocol>
+          <Vip>23.101.67.137</Vip>
+          <EnableDirectServerReturn>false</EnableDirectServerReturn>
+          <IdleTimeoutInMinutes xsi:nil="true" />
+        </InputEndpoint>
+      </InputEndpoints>
+      <SubnetNames>
+        <string>Management</string>
+      </SubnetNames>
+      <PublicIPs />
+    </ConfigurationSet>
+  </ConfigurationSets>
+  <DataVirtualHardDisks>
+    <DataVirtualHardDisk>
+      <HostCaching>ReadWrite</HostCaching>
+      <DiskName>sdazop01-sdazop01-0-201409180900430833</DiskName>
+      <Lun>0</Lun>
+      <LogicalDiskSizeInGB>500</LogicalDiskSizeInGB>
+    </DataVirtualHardDisk>
+  </DataVirtualHardDisks>
+  <OSVirtualHardDisk>
+    <HostCaching>ReadWrite</HostCaching>
+    <DiskName>sdazop01-sdazop01-0-201407211301340409</DiskName>
+    <SourceImageName>a699494373c04fc0bc8f2bb1389d6106__Windows-Server-2012-R2-201406.01-en.us-127GB.vhd</SourceImageName>
+    <OS>Windows</OS>
+  </OSVirtualHardDisk>
+  <RoleName>sdazop01</RoleName>
+  <RoleSize>Basic_A2</RoleSize>
+  <RoleType>PersistentVMRole</RoleType>
+  <NoExportPrivateKey>false</NoExportPrivateKey>
+  <NoRDPEndpoint>false</NoRDPEndpoint>
+  <NoSSHEndpoint>false</NoSSHEndpoint>
+  <ProvisionGuestAgent>true</ProvisionGuestAgent>
+  <ResourceExtensionReferences>
+    <ResourceExtensionReference>
+      <ReferenceName>BGInfo</ReferenceName>
+      <Publisher>Microsoft.Compute</Publisher>
+      <Name>BGInfo</Name>
+      <Version>1.*</Version>
+      <ResourceExtensionParameterValues />
+      <State>Enable</State>
+    </ResourceExtensionReference>
+  </ResourceExtensionReferences>
+</PersistentVM>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PersistentVM xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ConfigurationSets>
+    <ConfigurationSet xsi:type="NetworkConfigurationSet">
+      <ConfigurationSetType>NetworkConfiguration</ConfigurationSetType>
+      <InputEndpoints>
+        <InputEndpoint>
+          <LocalPort>80</LocalPort>
+          <Name>HTTP</Name>
+          <Port>80</Port>
+          <Protocol>tcp</Protocol>
+          <Vip>23.101.77.222</Vip>
+          <EnableDirectServerReturn>false</EnableDirectServerReturn>
+          <IdleTimeoutInMinutes xsi:nil="true" />
+        </InputEndpoint>
+        <InputEndpoint>
+          <LocalPort>443</LocalPort>
+          <Name>HTTPS</Name>
+          <Port>443</Port>
+          <Protocol>tcp</Protocol>
+          <Vip>23.101.77.222</Vip>
+          <EnableDirectServerReturn>false</EnableDirectServerReturn>
+          <IdleTimeoutInMinutes xsi:nil="true" />
+        </InputEndpoint>
+        <InputEndpoint>
+          <LocalPort>3389</LocalPort>
+          <Name>Remote Desktop</Name>
+          <Port>65426</Port>
+          <Protocol>tcp</Protocol>
+          <Vip>23.101.77.222</Vip>
+          <EnableDirectServerReturn>false</EnableDirectServerReturn>
+          <IdleTimeoutInMinutes xsi:nil="true" />
+        </InputEndpoint>
+      </InputEndpoints>
+      <SubnetNames>
+        <string>Frontend</string>
+      </SubnetNames>
+      <PublicIPs />
+    </ConfigurationSet>
+  </ConfigurationSets>
+  <DataVirtualHardDisks />
+  <OSVirtualHardDisk>
+    <HostCaching>ReadWrite</HostCaching>
+    <DiskName>SDAZIIS01-SDAZIIS01-0-201409120909100559</DiskName>
+    <SourceImageName>a699494373c04fc0bc8f2bb1389d6106__Windows-Server-2012-R2-201408.01-en.us-127GB.vhd</SourceImageName>
+    <OS>Windows</OS>
+  </OSVirtualHardDisk>
+  <RoleName>SDAZIIS01</RoleName>
+  <RoleSize>Basic_A0</RoleSize>
+  <RoleType>PersistentVMRole</RoleType>
+  <NoExportPrivateKey>false</NoExportPrivateKey>
+  <NoRDPEndpoint>false</NoRDPEndpoint>
+  <NoSSHEndpoint>false</NoSSHEndpoint>
+  <DefaultWinRmCertificateThumbprint>19B78B1504824047B339C4648E0EB67687EE9241</DefaultWinRmCertificateThumbprint>
+  <ProvisionGuestAgent>true</ProvisionGuestAgent>
+  <ResourceExtensionReferences>
+    <ResourceExtensionReference>
+      <ReferenceName>BGInfo</ReferenceName>
+      <Publisher>Microsoft.Compute</Publisher>
+      <Name>BGInfo</Name>
+      <Version>1.*</Version>
+      <ResourceExtensionParameterValues />
+      <State>Enable</State>
+    </ResourceExtensionReference>
+    <ResourceExtensionReference>
+      <ReferenceName>IaaSAntimalware</ReferenceName>
+      <Publisher>Microsoft.Azure.Security</Publisher>
+      <Name>IaaSAntimalware</Name>
+      <Version>1.*</Version>
+      <ResourceExtensionParameterValues />
+      <State>Enable</State>
+    </ResourceExtensionReference>
+  </ResourceExtensionReferences>
+</PersistentVM>

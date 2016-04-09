@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PersistentVM xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ConfigurationSets>
+    <ConfigurationSet xsi:type="NetworkConfigurationSet">
+      <ConfigurationSetType>NetworkConfiguration</ConfigurationSetType>
+      <InputEndpoints>
+        <InputEndpoint>
+          <LocalPort>5986</LocalPort>
+          <Name>PowerShell</Name>
+          <Port>5986</Port>
+          <Protocol>tcp</Protocol>
+          <Vip>23.101.71.90</Vip>
+          <EnableDirectServerReturn>false</EnableDirectServerReturn>
+          <IdleTimeoutInMinutes xsi:nil="true" />
+        </InputEndpoint>
+        <InputEndpoint>
+          <LocalPort>3389</LocalPort>
+          <Name>Remote Desktop</Name>
+          <Port>59142</Port>
+          <Protocol>tcp</Protocol>
+          <Vip>23.101.71.90</Vip>
+          <EnableDirectServerReturn>false</EnableDirectServerReturn>
+          <IdleTimeoutInMinutes xsi:nil="true" />
+        </InputEndpoint>
+      </InputEndpoints>
+      <SubnetNames>
+        <string>Frontend</string>
+      </SubnetNames>
+      <PublicIPs />
+    </ConfigurationSet>
+  </ConfigurationSets>
+  <DataVirtualHardDisks />
+  <OSVirtualHardDisk>
+    <HostCaching>ReadWrite</HostCaching>
+    <DiskName>spazsp2013-01-spazsp2013-01-0-201409251934590246</DiskName>
+    <SourceImageName>c6e0f177abd8496e934234bd27f46c5d__SharePoint-2013-Trial-7-14-2014</SourceImageName>
+    <OS>Windows</OS>
+  </OSVirtualHardDisk>
+  <RoleName>spazsp2013-01</RoleName>
+  <RoleSize>ExtraLarge</RoleSize>
+  <RoleType>PersistentVMRole</RoleType>
+  <NoExportPrivateKey>false</NoExportPrivateKey>
+  <NoRDPEndpoint>false</NoRDPEndpoint>
+  <NoSSHEndpoint>false</NoSSHEndpoint>
+  <DefaultWinRmCertificateThumbprint>E4AFCAA6418475AA7EDBE72933859CE2859A9403</DefaultWinRmCertificateThumbprint>
+  <ProvisionGuestAgent>true</ProvisionGuestAgent>
+  <ResourceExtensionReferences>
+    <ResourceExtensionReference>
+      <ReferenceName>BGInfo</ReferenceName>
+      <Publisher>Microsoft.Compute</Publisher>
+      <Name>BGInfo</Name>
+      <Version>1.*</Version>
+      <ResourceExtensionParameterValues />
+      <State>Enable</State>
+    </ResourceExtensionReference>
+  </ResourceExtensionReferences>
+</PersistentVM>

@@ -1,0 +1,1 @@
+stsadm -o addcontentdb -url http://ptpublicocidentalauthoring.bcpcorp.dev -databasename WSS_Content_a2288093ba664625b3032974475a6f02 -databaseserver 172.16.120.124\moss07

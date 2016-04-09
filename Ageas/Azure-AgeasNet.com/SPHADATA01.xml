@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PersistentVM xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <AvailabilitySetName>HANETSQL01</AvailabilitySetName>
+  <ConfigurationSets>
+    <ConfigurationSet xsi:type="NetworkConfigurationSet">
+      <ConfigurationSetType>NetworkConfiguration</ConfigurationSetType>
+      <InputEndpoints>
+        <InputEndpoint>
+          <LocalPort>5986</LocalPort>
+          <Name>PowerShell</Name>
+          <Port>64817</Port>
+          <Protocol>tcp</Protocol>
+          <Vip>23.100.0.14</Vip>
+          <EnableDirectServerReturn>false</EnableDirectServerReturn>
+          <IdleTimeoutInMinutes xsi:nil="true" />
+        </InputEndpoint>
+        <InputEndpoint>
+          <LocalPort>3389</LocalPort>
+          <Name>Remote Desktop</Name>
+          <Port>65490</Port>
+          <Protocol>tcp</Protocol>
+          <Vip>23.100.0.14</Vip>
+          <EnableDirectServerReturn>false</EnableDirectServerReturn>
+          <IdleTimeoutInMinutes xsi:nil="true" />
+        </InputEndpoint>
+      </InputEndpoints>
+      <SubnetNames>
+        <string>Data</string>
+      </SubnetNames>
+      <StaticVirtualNetworkIPAddress>10.108.66.7</StaticVirtualNetworkIPAddress>
+      <PublicIPs />
+    </ConfigurationSet>
+  </ConfigurationSets>
+  <DataVirtualHardDisks>
+    <DataVirtualHardDisk>
+      <HostCaching>ReadWrite</HostCaching>
+      <DiskName>SPAZSQL01-SPHADATA01-0-201409231000230003</DiskName>
+      <Lun>0</Lun>
+      <LogicalDiskSizeInGB>1000</LogicalDiskSizeInGB>
+    </DataVirtualHardDisk>
+  </DataVirtualHardDisks>
+  <OSVirtualHardDisk>
+    <HostCaching>ReadWrite</HostCaching>
+    <DiskName>SPAZSQL01-SPHADATA01-0-201409230945020094</DiskName>
+    <SourceImageName>a699494373c04fc0bc8f2bb1389d6106__Windows-Server-2012-R2-201409.01-en.us-127GB.vhd</SourceImageName>
+    <OS>Windows</OS>
+  </OSVirtualHardDisk>
+  <RoleName>SPHADATA01</RoleName>
+  <RoleSize>Small</RoleSize>
+  <RoleType>PersistentVMRole</RoleType>
+  <NoExportPrivateKey>false</NoExportPrivateKey>
+  <NoRDPEndpoint>false</NoRDPEndpoint>
+  <NoSSHEndpoint>false</NoSSHEndpoint>
+  <DefaultWinRmCertificateThumbprint>398CAF8F88712503FCB3678C26FB24E9AE9C2049</DefaultWinRmCertificateThumbprint>
+  <ProvisionGuestAgent>true</ProvisionGuestAgent>
+  <ResourceExtensionReferences>
+    <ResourceExtensionReference>
+      <ReferenceName>BGInfo</ReferenceName>
+      <Publisher>Microsoft.Compute</Publisher>
+      <Name>BGInfo</Name>
+      <Version>1.*</Version>
+      <ResourceExtensionParameterValues />
+      <State>Enable</State>
+    </ResourceExtensionReference>
+  </ResourceExtensionReferences>
+</PersistentVM>

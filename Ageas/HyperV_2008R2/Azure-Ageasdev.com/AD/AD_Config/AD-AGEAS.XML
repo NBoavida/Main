@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Azure SubscriptionName="AGEAS" ServiceName="AGEAS-DEV-DC" StorageAccount="portalvhdsjhkyqvhd88p4l" Location="West Europe" VNetName="AgeasDevVNet" AffinityGroup="AgeasDevVNet-AG">
+  <ServiceAccounts>
+  	<ServiceAccount UserName="ageasadmin" Password="Passw0rd!Ag" Type="WindowsLocal" />
+  </ServiceAccounts>
+  <AzureVNet CreateVNET="true" NetworkConfigFileName="NetworkConfig.xml" />
+  <AzureVMGroups>
+    <VMRole Name="DomainControllers" StartingImageName="a699494373c04fc0bc8f2bb1389d6106__Windows-Server-2012-R2-201406.01-en.us-127GB.vhd" 
+                  VMSize="Small" SubnetNames="DCSubnet" ServiceAccountName="ageasadmin" AvailabilitySet="DCSet" DataDiskSizesInGB="Data:20;Log:10" >
+      <AzureVM Name="AgeasDevDC1" DCType="NewForest" >
+      </AzureVM>
+    </VMRole>    
+  </AzureVMGroups>
+  <ActiveDirectory Domain="AGEASDEV" DnsDomain="AGEASDEV.COM" >
+  </ActiveDirectory>  
+</Azure>

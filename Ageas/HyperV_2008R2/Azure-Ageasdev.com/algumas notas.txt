@@ -1,0 +1,57 @@
+PE Logins:
+
+User: admin@sdazlnx01.cloudapp.net
+
+Pass: Eviph4dra
+
+
+adminazlnx@puppet
+puppetmaster
+
+
+
+
+
+##### exemploo#####
+
+
+##############################################
+
+
+class iis {
+ 
+  Dism { ensure => present, }
+  dism { 'IIS-WebServerRole': } ->
+  dism { 'IIS-WebServer': }
+ 
+}
+
+####################33
+
+
+package { 'Microsoft SQL Server 2008 R2 Native Client':
+    ensure  => present,
+    source  => '\\NAS\Installation Media\sqlncli.msi',
+    provider  => 'windows',
+    install_options => [ { 'USERNAME' => 'Administrator' }, { 'COMPANYNAME' => 'Company' }, { 'IACCEPTSQLNCLILICENSETERMS' => 'YES'} ],
+  }
+
+
+
+=======================================000
+
+Examples
+MSI example:
+
+    package { 'mysql':
+      ensure          => '5.5.16',
+      source          => 'N:\packages\mysql-5.5.16-winx64.msi',
+      install_options => ['INSTALLDIR=C:\mysql-5.5'],
+    }
+Executable installer example:
+
+    package { "Git version 1.8.4-preview20130916":
+     ensure          => installed,
+     source          => 'C:\code\puppetlabs\temp\windowsexample\Git-1.8.4-preview20130916.exe',
+     install_options => ['/VERYSILENT']
+    }

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PersistentVM xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ConfigurationSets>
+    <ConfigurationSet xsi:type="NetworkConfigurationSet">
+      <ConfigurationSetType>NetworkConfiguration</ConfigurationSetType>
+      <InputEndpoints>
+        <InputEndpoint>
+          <LocalPort>1433</LocalPort>
+          <Name>MSSQL</Name>
+          <Port>1433</Port>
+          <Protocol>tcp</Protocol>
+          <Vip>23.101.74.182</Vip>
+          <EnableDirectServerReturn>false</EnableDirectServerReturn>
+          <IdleTimeoutInMinutes xsi:nil="true" />
+        </InputEndpoint>
+        <InputEndpoint>
+          <LocalPort>5986</LocalPort>
+          <Name>PowerShell</Name>
+          <Port>5986</Port>
+          <Protocol>tcp</Protocol>
+          <Vip>23.101.74.182</Vip>
+          <EnableDirectServerReturn>false</EnableDirectServerReturn>
+          <IdleTimeoutInMinutes xsi:nil="true" />
+        </InputEndpoint>
+        <InputEndpoint>
+          <LocalPort>3389</LocalPort>
+          <Name>Remote Desktop</Name>
+          <Port>58935</Port>
+          <Protocol>tcp</Protocol>
+          <Vip>23.101.74.182</Vip>
+          <EnableDirectServerReturn>false</EnableDirectServerReturn>
+          <IdleTimeoutInMinutes xsi:nil="true" />
+        </InputEndpoint>
+      </InputEndpoints>
+      <SubnetNames>
+        <string>Data</string>
+      </SubnetNames>
+      <PublicIPs />
+    </ConfigurationSet>
+  </ConfigurationSets>
+  <DataVirtualHardDisks>
+    <DataVirtualHardDisk>
+      <HostCaching>ReadWrite</HostCaching>
+      <DiskName>SDAZSQL01-SDAZSQL01-0-201407182002090785</DiskName>
+      <Lun>0</Lun>
+      <LogicalDiskSizeInGB>100</LogicalDiskSizeInGB>
+    </DataVirtualHardDisk>
+  </DataVirtualHardDisks>
+  <OSVirtualHardDisk>
+    <HostCaching>ReadWrite</HostCaching>
+    <DiskName>SDAZSQL01-SDAZSQL01-0-201407181851520101</DiskName>
+    <SourceImageName>fb83b3509582419d99629ce476bcb5c8__SQL-Server-2012-SP1-11.0.3430.0-Enterprise-ENU-Win2012-cy14su05</SourceImageName>
+    <OS>Windows</OS>
+  </OSVirtualHardDisk>
+  <RoleName>SDAZSQL01</RoleName>
+  <RoleSize>Basic_A2</RoleSize>
+  <RoleType>PersistentVMRole</RoleType>
+  <NoExportPrivateKey>false</NoExportPrivateKey>
+  <NoRDPEndpoint>false</NoRDPEndpoint>
+  <NoSSHEndpoint>false</NoSSHEndpoint>
+  <ProvisionGuestAgent>true</ProvisionGuestAgent>
+  <ResourceExtensionReferences>
+    <ResourceExtensionReference>
+      <ReferenceName>BGInfo</ReferenceName>
+      <Publisher>Microsoft.Compute</Publisher>
+      <Name>BGInfo</Name>
+      <Version>1.*</Version>
+      <ResourceExtensionParameterValues />
+      <State>Enable</State>
+    </ResourceExtensionReference>
+    <ResourceExtensionReference>
+      <ReferenceName>PuppetEnterpriseAgent</ReferenceName>
+      <Publisher>PuppetLabs</Publisher>
+      <Name>PuppetEnterpriseAgent</Name>
+      <Version>3.*</Version>
+      <ResourceExtensionParameterValues />
+      <State>Enable</State>
+    </ResourceExtensionReference>
+    <ResourceExtensionReference>
+      <ReferenceName>IaaSAntimalware</ReferenceName>
+      <Publisher>Microsoft.Azure.Security</Publisher>
+      <Name>IaaSAntimalware</Name>
+      <Version>1.*</Version>
+      <ResourceExtensionParameterValues />
+      <State>Enable</State>
+    </ResourceExtensionReference>
+  </ResourceExtensionReferences>
+</PersistentVM>
