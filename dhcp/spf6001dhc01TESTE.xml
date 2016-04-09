@@ -1,0 +1,1661 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DHCPServer xmlns="http://schemas.microsoft.com/windows/DHCPServer">
+  <MajorVersion xmlns="">6</MajorVersion>
+  <MinorVersion xmlns="">1</MinorVersion>
+  <IPv4 xmlns="">
+    <ConflictDetectionAttempts>2</ConflictDetectionAttempts>
+    <NapEnabled>false</NapEnabled>
+    <NpsUnreachableAction>Full</NpsUnreachableAction>
+    <Classes>
+      <Class>
+        <Name>Default Routing and Remote Access Class</Name>
+        <Type>User</Type>
+        <Data>0x525241532e4d6963726f736f6674</Data>
+        <Description>User class for remote access clients</Description>
+      </Class>
+      <Class>
+        <Name>Default Network Access Protection Class</Name>
+        <Type>User</Type>
+        <Data>0x4d5346542051756172616e74696e65</Data>
+        <Description>Default special user class for Restricted Access clients</Description>
+      </Class>
+      <Class>
+        <Name>Default BOOTP Class</Name>
+        <Type>User</Type>
+        <Data>0x424f4f54502e4d6963726f736f6674</Data>
+        <Description>User class for BOOTP Clients</Description>
+      </Class>
+      <Class>
+        <Name>Microsoft Windows 2000 Options</Name>
+        <Type>Vendor</Type>
+        <Data>0x4d53465420352e30</Data>
+        <Description>Microsoft vendor-specific options for Windows 2000 and above Clients</Description>
+      </Class>
+      <Class>
+        <Name>Microsoft Windows 98 Options</Name>
+        <Type>Vendor</Type>
+        <Data>0x4d534654203938</Data>
+        <Description>Microsoft vendor-specific options for Windows 98 Clients</Description>
+      </Class>
+      <Class>
+        <Name>Microsoft Options</Name>
+        <Type>Vendor</Type>
+        <Data>0x4d534654</Data>
+        <Description>Microsoft vendor-specific options applicable to all Windows Clients</Description>
+      </Class>
+    </Classes>
+    <OptionDefinitions>
+      <OptionDefinition>
+        <Name>Classless Static Routes</Name>
+        <OptionId>121</OptionId>
+        <Type>BinaryData</Type>
+        <MultiValued>false</MultiValued>
+        <Description>Destination, mask and router IP addresses in priority order</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>Subnet Mask</Name>
+        <OptionId>1</OptionId>
+        <Type>IPv4Address</Type>
+        <MultiValued>false</MultiValued>
+        <DefaultValue>0.0.0.0</DefaultValue>
+        <Description>Subnet mask in network byte order</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>Time Offset</Name>
+        <OptionId>2</OptionId>
+        <Type>DWord</Type>
+        <MultiValued>false</MultiValued>
+        <DefaultValue>0</DefaultValue>
+        <Description>UCT offset in seconds</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>Router</Name>
+        <OptionId>3</OptionId>
+        <Type>IPv4Address</Type>
+        <MultiValued>true</MultiValued>
+        <DefaultValue>0.0.0.0</DefaultValue>
+        <Description>Array of router addresses ordered by preference</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>Time Server</Name>
+        <OptionId>4</OptionId>
+        <Type>IPv4Address</Type>
+        <MultiValued>true</MultiValued>
+        <DefaultValue>0.0.0.0</DefaultValue>
+        <Description>Array of time server addresses, by preference</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>Name Servers</Name>
+        <OptionId>5</OptionId>
+        <Type>IPv4Address</Type>
+        <MultiValued>true</MultiValued>
+        <DefaultValue>0.0.0.0</DefaultValue>
+        <Description>Array of name servers [IEN 116], by preference</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>DNS Servers</Name>
+        <OptionId>6</OptionId>
+        <Type>IPv4Address</Type>
+        <MultiValued>true</MultiValued>
+        <DefaultValue>0.0.0.0</DefaultValue>
+        <Description>Array of DNS servers, by preference</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>Log Servers</Name>
+        <OptionId>7</OptionId>
+        <Type>IPv4Address</Type>
+        <MultiValued>true</MultiValued>
+        <DefaultValue>0.0.0.0</DefaultValue>
+        <Description>Array of MIT_LCS UDP log servers on subnet</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>Cookie Servers</Name>
+        <OptionId>8</OptionId>
+        <Type>IPv4Address</Type>
+        <MultiValued>true</MultiValued>
+        <DefaultValue>0.0.0.0</DefaultValue>
+        <Description>Array of cookie servers, RFC 865</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>LPR Servers</Name>
+        <OptionId>9</OptionId>
+        <Type>IPv4Address</Type>
+        <MultiValued>true</MultiValued>
+        <DefaultValue>0.0.0.0</DefaultValue>
+        <Description>Array of RFC 1179 servers, by preference</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>Impress Servers</Name>
+        <OptionId>10</OptionId>
+        <Type>IPv4Address</Type>
+        <MultiValued>true</MultiValued>
+        <DefaultValue>0.0.0.0</DefaultValue>
+        <Description>Array of Imagen Impress Servers</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>Resource Location Servers</Name>
+        <OptionId>11</OptionId>
+        <Type>IPv4Address</Type>
+        <MultiValued>true</MultiValued>
+        <DefaultValue>0.0.0.0</DefaultValue>
+        <Description>Array of RFC 887 ResLoc Servers on subnet, by preference</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>Host Name</Name>
+        <OptionId>12</OptionId>
+        <Type>String</Type>
+        <MultiValued>false</MultiValued>
+        <DefaultValue />
+        <Description>Host name for client, RFC 1035 character set</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>Boot File Size</Name>
+        <OptionId>13</OptionId>
+        <Type>Word</Type>
+        <MultiValued>false</MultiValued>
+        <DefaultValue>0</DefaultValue>
+        <Description>Size of boot image file in 512-octet blocks</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>Merit Dump File</Name>
+        <OptionId>14</OptionId>
+        <Type>String</Type>
+        <MultiValued>false</MultiValued>
+        <DefaultValue />
+        <Description>Path name for crash dump file</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>DNS Domain Name</Name>
+        <OptionId>15</OptionId>
+        <Type>String</Type>
+        <MultiValued>false</MultiValued>
+        <DefaultValue />
+        <Description>DNS Domain name for client resolutions</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>Swap Server</Name>
+        <OptionId>16</OptionId>
+        <Type>IPv4Address</Type>
+        <MultiValued>false</MultiValued>
+        <DefaultValue>0.0.0.0</DefaultValue>
+        <Description>Address of client's swap server</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>Root Path</Name>
+        <OptionId>17</OptionId>
+        <Type>String</Type>
+        <MultiValued>false</MultiValued>
+        <DefaultValue />
+        <Description>Path name for client's root disk, char set NVT ASCII</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>Extensions Path</Name>
+        <OptionId>18</OptionId>
+        <Type>String</Type>
+        <MultiValued>false</MultiValued>
+        <DefaultValue />
+        <Description>tftp file for option extensions</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>IP Layer Forwarding</Name>
+        <OptionId>19</OptionId>
+        <Type>Byte</Type>
+        <MultiValued>false</MultiValued>
+        <DefaultValue>0x00</DefaultValue>
+        <Description>Disable/enable IP packet forwarding on this client</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>Nonlocal Source Routing</Name>
+        <OptionId>20</OptionId>
+        <Type>Byte</Type>
+        <MultiValued>false</MultiValued>
+        <DefaultValue>0x00</DefaultValue>
+        <Description>Disable/enable nonlocal datagrams</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>Policy Filter Masks</Name>
+        <OptionId>21</OptionId>
+        <Type>IPv4Address</Type>
+        <MultiValued>true</MultiValued>
+        <DefaultValue>0.0.0.0</DefaultValue>
+        <Description>Destination/mask IP address pairs to filter source routes</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>Max DG Reassembly Size</Name>
+        <OptionId>22</OptionId>
+        <Type>Word</Type>
+        <MultiValued>false</MultiValued>
+        <DefaultValue>0</DefaultValue>
+        <Description>Maximum size datagram for reassembly by client; max 576</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>Default IP Time-to-live</Name>
+        <OptionId>23</OptionId>
+        <Type>Byte</Type>
+        <MultiValued>false</MultiValued>
+        <DefaultValue>0x00</DefaultValue>
+        <Description>Default TTL for client's use on outgoing DGs</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>Path MTU Aging Timeout</Name>
+        <OptionId>24</OptionId>
+        <Type>DWord</Type>
+        <MultiValued>false</MultiValued>
+        <DefaultValue>0</DefaultValue>
+        <Description>Timeout in seconds for aging Path MTU values; RFC 1191</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>Path MTU Plateau Table</Name>
+        <OptionId>25</OptionId>
+        <Type>Word</Type>
+        <MultiValued>true</MultiValued>
+        <DefaultValue>0</DefaultValue>
+        <Description>MTU discovery sizes, sorted by size, all &gt;= 68</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>MTU Option</Name>
+        <OptionId>26</OptionId>
+        <Type>Word</Type>
+        <MultiValued>false</MultiValued>
+        <DefaultValue>0</DefaultValue>
+        <Description>MTU discovery size, &gt;= 68</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>All subnets are local</Name>
+        <OptionId>27</OptionId>
+        <Type>Byte</Type>
+        <MultiValued>false</MultiValued>
+        <DefaultValue>0x00</DefaultValue>
+        <Description>The client assumes that all subnets are local</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>Broadcast Address</Name>
+        <OptionId>28</OptionId>
+        <Type>IPv4Address</Type>
+        <MultiValued>false</MultiValued>
+        <DefaultValue>0.0.0.0</DefaultValue>
+        <Description>Broadcast address</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>Perform Mask Discovery</Name>
+        <OptionId>29</OptionId>
+        <Type>Byte</Type>
+        <MultiValued>false</MultiValued>
+        <DefaultValue>0x00</DefaultValue>
+        <Description>The client should use ICMP for subnet mask discovery.</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>Mask Supplier Option</Name>
+        <OptionId>30</OptionId>
+        <Type>Byte</Type>
+        <MultiValued>false</MultiValued>
+        <DefaultValue>0x00</DefaultValue>
+        <Description>The client should respond to subnet mask requests via ICMP.</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>Perform Router Discovery</Name>
+        <OptionId>31</OptionId>
+        <Type>Byte</Type>
+        <MultiValued>false</MultiValued>
+        <DefaultValue>0x00</DefaultValue>
+        <Description>The client should solicit routers using RFC 1256.</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>Router Solicitation Address</Name>
+        <OptionId>32</OptionId>
+        <Type>IPv4Address</Type>
+        <MultiValued>false</MultiValued>
+        <DefaultValue>0.0.0.0</DefaultValue>
+        <Description>Address to use for router solicitation</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>Static Route Option</Name>
+        <OptionId>33</OptionId>
+        <Type>IPv4Address</Type>
+        <MultiValued>true</MultiValued>
+        <DefaultValue>0.0.0.0</DefaultValue>
+        <Description>Destination/router address pairs, in priority order</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>Trailer Encapsulation</Name>
+        <OptionId>34</OptionId>
+        <Type>Byte</Type>
+        <MultiValued>false</MultiValued>
+        <DefaultValue>0x00</DefaultValue>
+        <Description>The client should negotiate use of trailers (RFC 983).</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>ARP Cache Timeout</Name>
+        <OptionId>35</OptionId>
+        <Type>DWord</Type>
+        <MultiValued>false</MultiValued>
+        <DefaultValue>0</DefaultValue>
+        <Description>Timeout in seconds for ARP cache entries</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>Ethernet Encapsulation</Name>
+        <OptionId>36</OptionId>
+        <Type>Byte</Type>
+        <MultiValued>false</MultiValued>
+        <DefaultValue>0x00</DefaultValue>
+        <Description>0=&gt;client should use ENet V2; 1=&gt; IEEE 802.3</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>TCP Default Time-to-live</Name>
+        <OptionId>37</OptionId>
+        <Type>Byte</Type>
+        <MultiValued>false</MultiValued>
+        <DefaultValue>0x00</DefaultValue>
+        <Description>TTL that client uses when sending TCP segments</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>Keepalive Interval</Name>
+        <OptionId>38</OptionId>
+        <Type>DWord</Type>
+        <MultiValued>false</MultiValued>
+        <DefaultValue>0</DefaultValue>
+        <Description>Keepalive timeout in seconds</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>Keepalive Garbage</Name>
+        <OptionId>39</OptionId>
+        <Type>Byte</Type>
+        <MultiValued>false</MultiValued>
+        <DefaultValue>0x00</DefaultValue>
+        <Description>Send garbage octet</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>NIS Domain Name</Name>
+        <OptionId>40</OptionId>
+        <Type>String</Type>
+        <MultiValued>false</MultiValued>
+        <DefaultValue />
+        <Description>Name of Network Information Service domain</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>NIS Servers</Name>
+        <OptionId>41</OptionId>
+        <Type>IPv4Address</Type>
+        <MultiValued>true</MultiValued>
+        <DefaultValue>0.0.0.0</DefaultValue>
+        <Description>Addresses of NIS servers on client's subnet</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>NTP Servers</Name>
+        <OptionId>42</OptionId>
+        <Type>IPv4Address</Type>
+        <MultiValued>true</MultiValued>
+        <DefaultValue>0.0.0.0</DefaultValue>
+        <Description>Addresses of Network Time Protocol servers</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>Vendor Specific Info</Name>
+        <OptionId>43</OptionId>
+        <Type>BinaryData</Type>
+        <MultiValued>false</MultiValued>
+        <Description>Embedded vendor-specific options</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>WINS/NBNS Servers</Name>
+        <OptionId>44</OptionId>
+        <Type>IPv4Address</Type>
+        <MultiValued>true</MultiValued>
+        <DefaultValue>0.0.0.0</DefaultValue>
+        <Description>NBNS Address(es) in priority order</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>NetBIOS over TCP/IP NBDD</Name>
+        <OptionId>45</OptionId>
+        <Type>IPv4Address</Type>
+        <MultiValued>true</MultiValued>
+        <DefaultValue>0.0.0.0</DefaultValue>
+        <Description>NetBIOS over TCP/IP NBDD address(es) in priority order</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>WINS/NBT Node Type</Name>
+        <OptionId>46</OptionId>
+        <Type>Byte</Type>
+        <MultiValued>false</MultiValued>
+        <DefaultValue>0x00</DefaultValue>
+        <Description>0x1 = B-node, 0x2 = P-node, 0x4 = M-node, 0x8 = H-node</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>NetBIOS Scope ID</Name>
+        <OptionId>47</OptionId>
+        <Type>String</Type>
+        <MultiValued>false</MultiValued>
+        <DefaultValue />
+        <Description>NetBIOS over TCP/IP Scope ID</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>X Window System Font</Name>
+        <OptionId>48</OptionId>
+        <Type>IPv4Address</Type>
+        <MultiValued>true</MultiValued>
+        <DefaultValue>0.0.0.0</DefaultValue>
+        <Description>Array of X Windows font servers</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>X Window System Display</Name>
+        <OptionId>49</OptionId>
+        <Type>IPv4Address</Type>
+        <MultiValued>true</MultiValued>
+        <DefaultValue>0.0.0.0</DefaultValue>
+        <Description>Array of X Windows Display Mgr servers</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>Lease</Name>
+        <OptionId>51</OptionId>
+        <Type>DWord</Type>
+        <MultiValued>false</MultiValued>
+        <DefaultValue>0</DefaultValue>
+        <Description>Client IP address lease time in seconds</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>Renewal (T1) Time Value</Name>
+        <OptionId>58</OptionId>
+        <Type>DWord</Type>
+        <MultiValued>false</MultiValued>
+        <DefaultValue>0</DefaultValue>
+        <Description>Time between addr assignment to RENEWING state</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>Rebinding (T2) Time Value</Name>
+        <OptionId>59</OptionId>
+        <Type>DWord</Type>
+        <MultiValued>false</MultiValued>
+        <DefaultValue>0</DefaultValue>
+        <Description>Time from addr assignment to REBINDING state</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>NIS+ Domain Name</Name>
+        <OptionId>64</OptionId>
+        <Type>String</Type>
+        <MultiValued>false</MultiValued>
+        <DefaultValue />
+        <Description>The name of the client's NIS+ domain.</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>NIS+ Servers</Name>
+        <OptionId>65</OptionId>
+        <Type>IPv4Address</Type>
+        <MultiValued>true</MultiValued>
+        <DefaultValue>0.0.0.0</DefaultValue>
+        <Description>A list of IP addresses indicating NIS+ servers</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>Boot Server Host Name</Name>
+        <OptionId>66</OptionId>
+        <Type>String</Type>
+        <MultiValued>false</MultiValued>
+        <DefaultValue />
+        <Description>TFTP boot server host name</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>Bootfile Name</Name>
+        <OptionId>67</OptionId>
+        <Type>String</Type>
+        <MultiValued>false</MultiValued>
+        <DefaultValue />
+        <Description>Bootfile Name</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>Mobile IP Home Agents</Name>
+        <OptionId>68</OptionId>
+        <Type>IPv4Address</Type>
+        <MultiValued>true</MultiValued>
+        <DefaultValue>0.0.0.0</DefaultValue>
+        <Description>Mobile IP home agents in priority order</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>Simple Mail Transport Protocol (SMTP) Servers</Name>
+        <OptionId>69</OptionId>
+        <Type>IPv4Address</Type>
+        <MultiValued>true</MultiValued>
+        <DefaultValue>0.0.0.0</DefaultValue>
+        <Description>List of SMTP servers available to the client</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>Post Office Protocol (POP3) Servers</Name>
+        <OptionId>70</OptionId>
+        <Type>IPv4Address</Type>
+        <MultiValued>true</MultiValued>
+        <DefaultValue>0.0.0.0</DefaultValue>
+        <Description>List of POP3 servers available to the client</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>Network News Transport Protocol (NNTP) Servers</Name>
+        <OptionId>71</OptionId>
+        <Type>IPv4Address</Type>
+        <MultiValued>true</MultiValued>
+        <DefaultValue>0.0.0.0</DefaultValue>
+        <Description>List of NNTP servers available to the client</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>World Wide Web (WWW) Servers</Name>
+        <OptionId>72</OptionId>
+        <Type>IPv4Address</Type>
+        <MultiValued>true</MultiValued>
+        <DefaultValue>0.0.0.0</DefaultValue>
+        <Description>List of WWW servers available to the client</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>Finger Servers</Name>
+        <OptionId>73</OptionId>
+        <Type>IPv4Address</Type>
+        <MultiValued>true</MultiValued>
+        <DefaultValue>0.0.0.0</DefaultValue>
+        <Description>List of Finger servers available to the client</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>Internet Relay Chat (IRC) Servers</Name>
+        <OptionId>74</OptionId>
+        <Type>IPv4Address</Type>
+        <MultiValued>true</MultiValued>
+        <DefaultValue>0.0.0.0</DefaultValue>
+        <Description>List of IRC servers available to the client</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>StreetTalk Servers</Name>
+        <OptionId>75</OptionId>
+        <Type>IPv4Address</Type>
+        <MultiValued>true</MultiValued>
+        <DefaultValue>0.0.0.0</DefaultValue>
+        <Description>List of StreetTalk servers available to the client</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>StreetTalk Directory Assistance (STDA) Servers</Name>
+        <OptionId>76</OptionId>
+        <Type>IPv4Address</Type>
+        <MultiValued>true</MultiValued>
+        <DefaultValue>0.0.0.0</DefaultValue>
+        <Description>List of STDA servers available to the client</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>VOIP - TFTP</Name>
+        <OptionId>176</OptionId>
+        <Type>String</Type>
+        <MultiValued>false</MultiValued>
+        <DefaultValue />
+        <Description>IP Phone settings - TFTP</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>VOIP  - HTTPDIR</Name>
+        <OptionId>242</OptionId>
+        <Type>String</Type>
+        <MultiValued>false</MultiValued>
+        <DefaultValue />
+        <Description>IP Phone settings - HTTPDIR</Description>
+        <VendorClass />
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>Microsoft Disable Netbios Option </Name>
+        <OptionId>1</OptionId>
+        <Type>DWord</Type>
+        <MultiValued>false</MultiValued>
+        <DefaultValue>1</DefaultValue>
+        <Description>Option for enabling or disabling Netbios for Microsoft Windows 2000 Clients</Description>
+        <VendorClass>Microsoft Options</VendorClass>
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>Microsoft Release DHCP Lease On Shutdown Option</Name>
+        <OptionId>2</OptionId>
+        <Type>DWord</Type>
+        <MultiValued>false</MultiValued>
+        <DefaultValue>1</DefaultValue>
+        <Description>Option for enabling or disabling Windows 2000 Clients to release DHCP lease on shutdown</Description>
+        <VendorClass>Microsoft Options</VendorClass>
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>Microsoft Default Router Metric Base</Name>
+        <OptionId>3</OptionId>
+        <Type>DWord</Type>
+        <MultiValued>false</MultiValued>
+        <DefaultValue>1</DefaultValue>
+        <Description>Default Router Base Metrics for Microsoft Windows 2000 Clients</Description>
+        <VendorClass>Microsoft Options</VendorClass>
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>Microsoft Disable Netbios Option </Name>
+        <OptionId>1</OptionId>
+        <Type>DWord</Type>
+        <MultiValued>false</MultiValued>
+        <DefaultValue>1</DefaultValue>
+        <Description>Option for enabling or disabling Netbios for Microsoft Windows 2000 Clients</Description>
+        <VendorClass>Microsoft Windows 2000 Options</VendorClass>
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>Microsoft Release DHCP Lease On Shutdown Option</Name>
+        <OptionId>2</OptionId>
+        <Type>DWord</Type>
+        <MultiValued>false</MultiValued>
+        <DefaultValue>1</DefaultValue>
+        <Description>Option for enabling or disabling Windows 2000 Clients to release DHCP lease on shutdown</Description>
+        <VendorClass>Microsoft Windows 2000 Options</VendorClass>
+      </OptionDefinition>
+      <OptionDefinition>
+        <Name>Microsoft Default Router Metric Base</Name>
+        <OptionId>3</OptionId>
+        <Type>DWord</Type>
+        <MultiValued>false</MultiValued>
+        <DefaultValue>0</DefaultValue>
+        <Description>Default Router Base Metrics for Microsoft Windows 2000 Clients</Description>
+        <VendorClass>Microsoft Windows 2000 Options</VendorClass>
+      </OptionDefinition>
+    </OptionDefinitions>
+    <OptionValues>
+      <OptionValue>
+        <OptionId>81</OptionId>
+        <Value>7</Value>
+        <VendorClass />
+        <UserClass />
+      </OptionValue>
+    </OptionValues>
+    <Filters>
+      <Allow>false</Allow>
+      <Deny>false</Deny>
+    </Filters>
+    <Scopes>
+      <Scope>
+        <ScopeId>172.22.100.0</ScopeId>
+        <Name>CXS Alexandre Herculano / 5 Outubro - Agência Clientes</Name>
+        <SubnetMask>255.255.255.0</SubnetMask>
+        <StartRange>172.22.100.11</StartRange>
+        <EndRange>172.22.100.254</EndRange>
+        <LeaseDuration>6.00:00:00</LeaseDuration>
+        <State>Active</State>
+        <Type>Dhcp</Type>
+        <MaxBootpClients>4294967295</MaxBootpClients>
+        <NapEnable>false</NapEnable>
+        <Delay>0</Delay>
+        <NapProfile />
+        <Description />
+        <SuperScopeName />
+        <ExclusionRanges>
+          <IPRange>
+            <StartRange>172.22.100.11</StartRange>
+            <EndRange>172.22.100.50</EndRange>
+          </IPRange>
+          <IPRange>
+            <StartRange>172.22.100.221</StartRange>
+            <EndRange>172.22.100.254</EndRange>
+          </IPRange>
+          <IPRange>
+            <StartRange>172.22.100.151</StartRange>
+            <EndRange>172.22.100.220</EndRange>
+          </IPRange>
+        </ExclusionRanges>
+        <OptionValues>
+          <OptionValue>
+            <OptionId>3</OptionId>
+            <Value>172.22.100.1</Value>
+            <VendorClass />
+            <UserClass />
+          </OptionValue>
+          <OptionValue>
+            <OptionId>6</OptionId>
+            <Value>172.22.96.13</Value>
+            <Value>172.22.96.11</Value>
+            <Value>10.217.2.82</Value>
+            <Value>10.217.2.94</Value>
+            <VendorClass />
+            <UserClass />
+          </OptionValue>
+          <OptionValue>
+            <OptionId>15</OptionId>
+            <Value>fidelidademundial.com</Value>
+            <VendorClass />
+            <UserClass />
+          </OptionValue>
+          <OptionValue>
+            <OptionId>44</OptionId>
+            <Value>172.23.33.15</Value>
+            <Value>172.23.33.17</Value>
+            <VendorClass />
+            <UserClass />
+          </OptionValue>
+          <OptionValue>
+            <OptionId>46</OptionId>
+            <Value>0x08</Value>
+            <VendorClass />
+            <UserClass />
+          </OptionValue>
+          <OptionValue>
+            <OptionId>51</OptionId>
+            <Value>518400</Value>
+            <VendorClass />
+            <UserClass />
+          </OptionValue>
+        </OptionValues>
+        <Reservations>
+          <Reservation>
+            <Name>AXIS476D93.fidelidademundial.com</Name>
+            <IPAddress>172.22.100.11</IPAddress>
+            <ClientId>00-40-8c-47-6d-93</ClientId>
+            <Type>Both</Type>
+            <Description>PRAHR0601</Description>
+          </Reservation>
+          <Reservation>
+            <Name>AXIS476E55.fidelidademundial.com</Name>
+            <IPAddress>172.22.100.14</IPAddress>
+            <ClientId>00-40-8c-47-6e-55</ClientId>
+            <Type>Both</Type>
+            <Description>PRAHR0604</Description>
+          </Reservation>
+          <Reservation>
+            <Name>AXIS476E6D.fidelidademundial.com</Name>
+            <IPAddress>172.22.100.15</IPAddress>
+            <ClientId>00-40-8c-47-6e-6d</ClientId>
+            <Type>Both</Type>
+            <Description>PRAHR0605</Description>
+          </Reservation>
+          <Reservation>
+            <Name>AXIS476839.fidelidademundial.com</Name>
+            <IPAddress>172.22.100.16</IPAddress>
+            <ClientId>00-40-8c-47-68-39</ClientId>
+            <Type>Both</Type>
+            <Description>PRAHR0606</Description>
+          </Reservation>
+          <Reservation>
+            <Name>AXIS476F14</Name>
+            <IPAddress>172.22.100.17</IPAddress>
+            <ClientId>00-40-8c-47-6f-14</ClientId>
+            <Type>Both</Type>
+            <Description>PRAHR0607</Description>
+          </Reservation>
+          <Reservation>
+            <Name>AGPRAHR0602.fidelidademundial.com</Name>
+            <IPAddress>172.22.100.12</IPAddress>
+            <ClientId>00-40-8c-47-6c-42</ClientId>
+            <Type>Both</Type>
+            <Description>PRAHR0602</Description>
+          </Reservation>
+          <Reservation>
+            <Name>PEAH5300A01.bcpcorp.net</Name>
+            <IPAddress>172.22.100.18</IPAddress>
+            <ClientId>00-40-8c-47-67-79</ClientId>
+            <Type>Both</Type>
+            <Description>PRAHRRC01</Description>
+          </Reservation>
+          <Reservation>
+            <Name>PEAH5300A02.bcpcorp.net</Name>
+            <IPAddress>172.22.100.19</IPAddress>
+            <ClientId>00-40-8c-47-67-8c</ClientId>
+            <Type>Both</Type>
+            <Description>PRAHRRC02</Description>
+          </Reservation>
+          <Reservation>
+            <Name>PEAH5300A04.bcpcorp.net</Name>
+            <IPAddress>172.22.100.21</IPAddress>
+            <ClientId>00-40-8c-47-6e-dc</ClientId>
+            <Type>Both</Type>
+            <Description>PRAHRRC04</Description>
+          </Reservation>
+          <Reservation>
+            <Name>PEAH5300A03.bcpcorp.net</Name>
+            <IPAddress>172.22.100.20</IPAddress>
+            <ClientId>00-40-8c-47-70-a8</ClientId>
+            <Type>Both</Type>
+            <Description>PRAHRRC03</Description>
+          </Reservation>
+          <Reservation>
+            <Name>PEAH5300AE1.fidelidademundial.com</Name>
+            <IPAddress>172.22.100.22</IPAddress>
+            <ClientId>00-40-8c-47-6d-83</ClientId>
+            <Type>Both</Type>
+            <Description>PRAHRRC05</Description>
+          </Reservation>
+          <Reservation>
+            <Name>PEAH5300AE6.bcpcorp.net</Name>
+            <IPAddress>172.22.100.23</IPAddress>
+            <ClientId>00-40-8c-47-66-4d</ClientId>
+            <Type>Both</Type>
+            <Description>PRAHRRC10</Description>
+          </Reservation>
+          <Reservation>
+            <Name>AXIS476E5C</Name>
+            <IPAddress>172.22.100.13</IPAddress>
+            <ClientId>00-40-8c-47-6e-5c</ClientId>
+            <Type>Both</Type>
+            <Description>PRAHR0603</Description>
+          </Reservation>
+          <Reservation>
+            <Name>PRAHRRC11.fidelidademundial.com</Name>
+            <IPAddress>172.22.100.25</IPAddress>
+            <ClientId>00-40-8c-47-6f-f5</ClientId>
+            <Type>Both</Type>
+            <Description />
+          </Reservation>
+          <Reservation>
+            <Name>PRARHRC12</Name>
+            <IPAddress>172.22.100.26</IPAddress>
+            <ClientId>00-40-8c-47-66-02</ClientId>
+            <Type>Both</Type>
+            <Description />
+          </Reservation>
+        </Reservations>
+        <Leases>
+          <Lease>
+            <IPAddress>172.22.100.11</IPAddress>
+            <ScopeId>172.22.100.0</ScopeId>
+            <ClientId>00-40-8c-47-6d-93</ClientId>
+            <AddressState>ActiveReservation</AddressState>
+            <ClientType>Dhcp</ClientType>
+            <NapCapable>true</NapCapable>
+            <DnsRR>NoRegistration</DnsRR>
+            <DnsRegistration>NotApplicable</DnsRegistration>
+            <NapStatus>FullAccess</NapStatus>
+            <HostName>AXIS476D93.fidelidademundial.com</HostName>
+            <Description>PRAHR0601</Description>
+          </Lease>
+          <Lease>
+            <IPAddress>172.22.100.12</IPAddress>
+            <ScopeId>172.22.100.0</ScopeId>
+            <ClientId>00-40-8c-47-6c-42</ClientId>
+            <AddressState>InactiveReservation</AddressState>
+            <ClientType>Dhcp</ClientType>
+            <NapCapable>true</NapCapable>
+            <DnsRR>PTR</DnsRR>
+            <DnsRegistration>Complete</DnsRegistration>
+            <NapStatus>FullAccess</NapStatus>
+            <HostName>AGPRAHR0602.fidelidademundial.com</HostName>
+            <Description>PRAHR0602</Description>
+          </Lease>
+          <Lease>
+            <IPAddress>172.22.100.13</IPAddress>
+            <ScopeId>172.22.100.0</ScopeId>
+            <ClientId>00-40-8c-47-6e-5c</ClientId>
+            <AddressState>InactiveReservation</AddressState>
+            <ClientType>None</ClientType>
+            <NapCapable>true</NapCapable>
+            <DnsRR>NoRegistration</DnsRR>
+            <DnsRegistration>NotApplicable</DnsRegistration>
+            <NapStatus>FullAccess</NapStatus>
+            <HostName>AXIS476E5C</HostName>
+            <Description>PRAHR0603</Description>
+          </Lease>
+          <Lease>
+            <IPAddress>172.22.100.14</IPAddress>
+            <ScopeId>172.22.100.0</ScopeId>
+            <ClientId>00-40-8c-47-6e-55</ClientId>
+            <AddressState>ActiveReservation</AddressState>
+            <ClientType>Dhcp</ClientType>
+            <NapCapable>true</NapCapable>
+            <DnsRR>NoRegistration</DnsRR>
+            <DnsRegistration>NotApplicable</DnsRegistration>
+            <NapStatus>FullAccess</NapStatus>
+            <HostName>AXIS476E55.fidelidademundial.com</HostName>
+            <Description>PRAHR0604</Description>
+          </Lease>
+          <Lease>
+            <IPAddress>172.22.100.15</IPAddress>
+            <ScopeId>172.22.100.0</ScopeId>
+            <ClientId>00-40-8c-47-6e-6d</ClientId>
+            <AddressState>ActiveReservation</AddressState>
+            <ClientType>Dhcp</ClientType>
+            <NapCapable>true</NapCapable>
+            <DnsRR>NoRegistration</DnsRR>
+            <DnsRegistration>NotApplicable</DnsRegistration>
+            <NapStatus>FullAccess</NapStatus>
+            <HostName>AXIS476E6D.fidelidademundial.com</HostName>
+            <Description>PRAHR0605</Description>
+          </Lease>
+          <Lease>
+            <IPAddress>172.22.100.16</IPAddress>
+            <ScopeId>172.22.100.0</ScopeId>
+            <ClientId>00-40-8c-47-68-39</ClientId>
+            <AddressState>ActiveReservation</AddressState>
+            <ClientType>Dhcp</ClientType>
+            <NapCapable>true</NapCapable>
+            <DnsRR>NoRegistration</DnsRR>
+            <DnsRegistration>NotApplicable</DnsRegistration>
+            <NapStatus>FullAccess</NapStatus>
+            <HostName>AXIS476839.fidelidademundial.com</HostName>
+            <Description>PRAHR0606</Description>
+          </Lease>
+          <Lease>
+            <IPAddress>172.22.100.17</IPAddress>
+            <ScopeId>172.22.100.0</ScopeId>
+            <ClientId>00-40-8c-47-6f-14</ClientId>
+            <AddressState>InactiveReservation</AddressState>
+            <ClientType>None</ClientType>
+            <NapCapable>true</NapCapable>
+            <DnsRR>NoRegistration</DnsRR>
+            <DnsRegistration>NotApplicable</DnsRegistration>
+            <NapStatus>FullAccess</NapStatus>
+            <HostName>AXIS476F14</HostName>
+            <Description>PRAHR0607</Description>
+          </Lease>
+          <Lease>
+            <IPAddress>172.22.100.18</IPAddress>
+            <ScopeId>172.22.100.0</ScopeId>
+            <ClientId>00-40-8c-47-67-79</ClientId>
+            <AddressState>ActiveReservation</AddressState>
+            <ClientType>Dhcp</ClientType>
+            <NapCapable>true</NapCapable>
+            <DnsRR>PTR</DnsRR>
+            <DnsRegistration>Complete</DnsRegistration>
+            <NapStatus>FullAccess</NapStatus>
+            <HostName>PEAH5300A01.bcpcorp.net</HostName>
+            <Description>PRAHRRC01</Description>
+          </Lease>
+          <Lease>
+            <IPAddress>172.22.100.19</IPAddress>
+            <ScopeId>172.22.100.0</ScopeId>
+            <ClientId>00-40-8c-47-67-8c</ClientId>
+            <AddressState>ActiveReservation</AddressState>
+            <ClientType>Dhcp</ClientType>
+            <NapCapable>true</NapCapable>
+            <DnsRR>PTR</DnsRR>
+            <DnsRegistration>Complete</DnsRegistration>
+            <NapStatus>FullAccess</NapStatus>
+            <HostName>PEAH5300A02.bcpcorp.net</HostName>
+            <Description>PRAHRRC02</Description>
+          </Lease>
+          <Lease>
+            <IPAddress>172.22.100.20</IPAddress>
+            <ScopeId>172.22.100.0</ScopeId>
+            <ClientId>00-40-8c-47-70-a8</ClientId>
+            <AddressState>ActiveReservation</AddressState>
+            <ClientType>Dhcp</ClientType>
+            <NapCapable>true</NapCapable>
+            <DnsRR>PTR</DnsRR>
+            <DnsRegistration>Complete</DnsRegistration>
+            <NapStatus>FullAccess</NapStatus>
+            <HostName>PEAH5300A03.bcpcorp.net</HostName>
+            <Description>PRAHRRC03</Description>
+          </Lease>
+          <Lease>
+            <IPAddress>172.22.100.21</IPAddress>
+            <ScopeId>172.22.100.0</ScopeId>
+            <ClientId>00-40-8c-47-6e-dc</ClientId>
+            <AddressState>ActiveReservation</AddressState>
+            <ClientType>Dhcp</ClientType>
+            <NapCapable>true</NapCapable>
+            <DnsRR>PTR</DnsRR>
+            <DnsRegistration>Complete</DnsRegistration>
+            <NapStatus>FullAccess</NapStatus>
+            <HostName>PEAH5300A04.bcpcorp.net</HostName>
+            <Description>PRAHRRC04</Description>
+          </Lease>
+          <Lease>
+            <IPAddress>172.22.100.22</IPAddress>
+            <ScopeId>172.22.100.0</ScopeId>
+            <ClientId>00-40-8c-47-6d-83</ClientId>
+            <AddressState>ActiveReservation</AddressState>
+            <ClientType>Dhcp</ClientType>
+            <NapCapable>true</NapCapable>
+            <DnsRR>NoRegistration</DnsRR>
+            <DnsRegistration>NotApplicable</DnsRegistration>
+            <NapStatus>FullAccess</NapStatus>
+            <HostName>PEAH5300AE1.fidelidademundial.com</HostName>
+            <Description>PRAHRRC05</Description>
+          </Lease>
+          <Lease>
+            <IPAddress>172.22.100.23</IPAddress>
+            <ScopeId>172.22.100.0</ScopeId>
+            <ClientId>00-40-8c-47-66-4d</ClientId>
+            <AddressState>ActiveReservation</AddressState>
+            <ClientType>Dhcp</ClientType>
+            <NapCapable>true</NapCapable>
+            <DnsRR>PTR</DnsRR>
+            <DnsRegistration>Complete</DnsRegistration>
+            <NapStatus>FullAccess</NapStatus>
+            <HostName>PEAH5300AE6.bcpcorp.net</HostName>
+            <Description>PRAHRRC10</Description>
+          </Lease>
+          <Lease>
+            <IPAddress>172.22.100.25</IPAddress>
+            <ScopeId>172.22.100.0</ScopeId>
+            <ClientId>00-40-8c-47-6f-f5</ClientId>
+            <AddressState>ActiveReservation</AddressState>
+            <ClientType>Dhcp</ClientType>
+            <NapCapable>true</NapCapable>
+            <DnsRR>PTR</DnsRR>
+            <DnsRegistration>Pending</DnsRegistration>
+            <NapStatus>FullAccess</NapStatus>
+            <HostName>PRAHRRC11.fidelidademundial.com</HostName>
+          </Lease>
+          <Lease>
+            <IPAddress>172.22.100.26</IPAddress>
+            <ScopeId>172.22.100.0</ScopeId>
+            <ClientId>00-40-8c-47-66-02</ClientId>
+            <AddressState>InactiveReservation</AddressState>
+            <ClientType>None</ClientType>
+            <NapCapable>true</NapCapable>
+            <DnsRR>NoRegistration</DnsRR>
+            <DnsRegistration>NotApplicable</DnsRegistration>
+            <NapStatus>FullAccess</NapStatus>
+            <HostName>PRARHRC12</HostName>
+          </Lease>
+          <Lease>
+            <IPAddress>172.22.100.51</IPAddress>
+            <ScopeId>172.22.100.0</ScopeId>
+            <ClientId>00-19-99-d3-cb-ab</ClientId>
+            <AddressState>Active</AddressState>
+            <ClientType>Dhcp</ClientType>
+            <NapCapable>false</NapCapable>
+            <DnsRR>PTR</DnsRR>
+            <DnsRegistration>Complete</DnsRegistration>
+            <LeaseExpiryTime>2015-08-27 09:07:12Z</LeaseExpiryTime>
+            <NapStatus>FullAccess</NapStatus>
+            <HostName>YLDE022911.fidelidademundial.com</HostName>
+          </Lease>
+          <Lease>
+            <IPAddress>172.22.100.52</IPAddress>
+            <ScopeId>172.22.100.0</ScopeId>
+            <ClientId>00-0f-fe-c4-a8-0a</ClientId>
+            <AddressState>Active</AddressState>
+            <ClientType>Dhcp</ClientType>
+            <NapCapable>true</NapCapable>
+            <DnsRR>PTR</DnsRR>
+            <DnsRegistration>Complete</DnsRegistration>
+            <LeaseExpiryTime>2015-08-31 09:07:00Z</LeaseExpiryTime>
+            <NapStatus>FullAccess</NapStatus>
+            <HostName>FMNRAHRRCW3078.fidelidademundial.com</HostName>
+          </Lease>
+          <Lease>
+            <IPAddress>172.22.100.53</IPAddress>
+            <ScopeId>172.22.100.0</ScopeId>
+            <ClientId>00-19-99-dd-27-03</ClientId>
+            <AddressState>Active</AddressState>
+            <ClientType>Dhcp</ClientType>
+            <NapCapable>false</NapCapable>
+            <DnsRR>PTR</DnsRR>
+            <DnsRegistration>Complete</DnsRegistration>
+            <LeaseExpiryTime>2015-09-01 07:23:54Z</LeaseExpiryTime>
+            <NapStatus>FullAccess</NapStatus>
+            <HostName>YLDE024962.fidelidademundial.com</HostName>
+          </Lease>
+          <Lease>
+            <IPAddress>172.22.100.54</IPAddress>
+            <ScopeId>172.22.100.0</ScopeId>
+            <ClientId>00-19-99-d3-f6-b3</ClientId>
+            <AddressState>Active</AddressState>
+            <ClientType>Dhcp</ClientType>
+            <NapCapable>false</NapCapable>
+            <DnsRR>PTR</DnsRR>
+            <DnsRegistration>Complete</DnsRegistration>
+            <LeaseExpiryTime>2015-09-01 07:58:14Z</LeaseExpiryTime>
+            <NapStatus>FullAccess</NapStatus>
+            <HostName>YLDE025673.fidelidademundial.com</HostName>
+          </Lease>
+          <Lease>
+            <IPAddress>172.22.100.55</IPAddress>
+            <ScopeId>172.22.100.0</ScopeId>
+            <ClientId>00-19-99-d3-f5-91</ClientId>
+            <AddressState>Active</AddressState>
+            <ClientType>Dhcp</ClientType>
+            <NapCapable>false</NapCapable>
+            <DnsRR>PTR</DnsRR>
+            <DnsRegistration>Complete</DnsRegistration>
+            <LeaseExpiryTime>2015-08-31 10:54:58Z</LeaseExpiryTime>
+            <NapStatus>FullAccess</NapStatus>
+            <HostName>YLDE025170.fidelidademundial.com</HostName>
+          </Lease>
+          <Lease>
+            <IPAddress>172.22.100.56</IPAddress>
+            <ScopeId>172.22.100.0</ScopeId>
+            <ClientId>00-19-99-d3-f8-f0</ClientId>
+            <AddressState>Active</AddressState>
+            <ClientType>Dhcp</ClientType>
+            <NapCapable>false</NapCapable>
+            <DnsRR>PTR</DnsRR>
+            <DnsRegistration>Complete</DnsRegistration>
+            <LeaseExpiryTime>2015-09-01 07:55:37Z</LeaseExpiryTime>
+            <NapStatus>FullAccess</NapStatus>
+            <HostName>YLDE025179.fidelidademundial.com</HostName>
+          </Lease>
+          <Lease>
+            <IPAddress>172.22.100.57</IPAddress>
+            <ScopeId>172.22.100.0</ScopeId>
+            <ClientId>00-19-99-d1-a7-8b</ClientId>
+            <AddressState>Active</AddressState>
+            <ClientType>Dhcp</ClientType>
+            <NapCapable>false</NapCapable>
+            <DnsRR>PTR</DnsRR>
+            <DnsRegistration>Complete</DnsRegistration>
+            <LeaseExpiryTime>2015-09-01 07:22:06Z</LeaseExpiryTime>
+            <NapStatus>FullAccess</NapStatus>
+            <HostName>YLDE022906.fidelidademundial.com</HostName>
+          </Lease>
+          <Lease>
+            <IPAddress>172.22.100.58</IPAddress>
+            <ScopeId>172.22.100.0</ScopeId>
+            <ClientId>00-19-99-d3-f7-5b</ClientId>
+            <AddressState>Active</AddressState>
+            <ClientType>Dhcp</ClientType>
+            <NapCapable>false</NapCapable>
+            <DnsRR>PTR</DnsRR>
+            <DnsRegistration>Complete</DnsRegistration>
+            <LeaseExpiryTime>2015-08-31 07:09:38Z</LeaseExpiryTime>
+            <NapStatus>FullAccess</NapStatus>
+            <HostName>YLDE025881.fidelidademundial.com</HostName>
+          </Lease>
+          <Lease>
+            <IPAddress>172.22.100.59</IPAddress>
+            <ScopeId>172.22.100.0</ScopeId>
+            <ClientId>00-19-99-33-81-c5</ClientId>
+            <AddressState>Active</AddressState>
+            <ClientType>Dhcp</ClientType>
+            <NapCapable>true</NapCapable>
+            <DnsRR>PTR</DnsRR>
+            <DnsRegistration>Complete</DnsRegistration>
+            <LeaseExpiryTime>2015-09-01 06:25:30Z</LeaseExpiryTime>
+            <NapStatus>FullAccess</NapStatus>
+            <HostName>FMNRAHR06W3106.fidelidademundial.com</HostName>
+          </Lease>
+          <Lease>
+            <IPAddress>172.22.100.60</IPAddress>
+            <ScopeId>172.22.100.0</ScopeId>
+            <ClientId>00-19-99-d3-f8-d8</ClientId>
+            <AddressState>Active</AddressState>
+            <ClientType>Dhcp</ClientType>
+            <NapCapable>false</NapCapable>
+            <DnsRR>PTR</DnsRR>
+            <DnsRegistration>Complete</DnsRegistration>
+            <LeaseExpiryTime>2015-08-31 08:48:27Z</LeaseExpiryTime>
+            <NapStatus>FullAccess</NapStatus>
+            <HostName>YLDE024955.fidelidademundial.com</HostName>
+          </Lease>
+          <Lease>
+            <IPAddress>172.22.100.61</IPAddress>
+            <ScopeId>172.22.100.0</ScopeId>
+            <ClientId>10-1f-74-eb-66-0a</ClientId>
+            <AddressState>Active</AddressState>
+            <ClientType>Dhcp</ClientType>
+            <NapCapable>true</NapCapable>
+            <DnsRR>PTR</DnsRR>
+            <DnsRegistration>Complete</DnsRegistration>
+            <LeaseExpiryTime>2015-08-26 16:01:35Z</LeaseExpiryTime>
+            <NapStatus>FullAccess</NapStatus>
+            <HostName>FMNRAHR04W3109.fidelidademundial.com</HostName>
+          </Lease>
+          <Lease>
+            <IPAddress>172.22.100.62</IPAddress>
+            <ScopeId>172.22.100.0</ScopeId>
+            <ClientId>00-19-99-d3-fb-f7</ClientId>
+            <AddressState>Active</AddressState>
+            <ClientType>Dhcp</ClientType>
+            <NapCapable>false</NapCapable>
+            <DnsRR>PTR</DnsRR>
+            <DnsRegistration>Complete</DnsRegistration>
+            <LeaseExpiryTime>2015-09-01 07:31:13Z</LeaseExpiryTime>
+            <NapStatus>FullAccess</NapStatus>
+            <HostName>YLDE023787.fidelidademundial.com</HostName>
+          </Lease>
+          <Lease>
+            <IPAddress>172.22.100.63</IPAddress>
+            <ScopeId>172.22.100.0</ScopeId>
+            <ClientId>00-19-99-d3-c9-07</ClientId>
+            <AddressState>Active</AddressState>
+            <ClientType>Dhcp</ClientType>
+            <NapCapable>false</NapCapable>
+            <DnsRR>PTR</DnsRR>
+            <DnsRegistration>Complete</DnsRegistration>
+            <LeaseExpiryTime>2015-09-01 08:37:22Z</LeaseExpiryTime>
+            <NapStatus>FullAccess</NapStatus>
+            <HostName>YLDE023103.fidelidademundial.com</HostName>
+          </Lease>
+          <Lease>
+            <IPAddress>172.22.100.64</IPAddress>
+            <ScopeId>172.22.100.0</ScopeId>
+            <ClientId>00-19-99-d3-c9-17</ClientId>
+            <AddressState>Active</AddressState>
+            <ClientType>Dhcp</ClientType>
+            <NapCapable>false</NapCapable>
+            <DnsRR>PTR</DnsRR>
+            <DnsRegistration>Complete</DnsRegistration>
+            <LeaseExpiryTime>2015-09-01 06:53:50Z</LeaseExpiryTime>
+            <NapStatus>FullAccess</NapStatus>
+            <HostName>YLDE023108.fidelidademundial.com</HostName>
+          </Lease>
+          <Lease>
+            <IPAddress>172.22.100.65</IPAddress>
+            <ScopeId>172.22.100.0</ScopeId>
+            <ClientId>00-0f-fe-c5-a0-06</ClientId>
+            <AddressState>Active</AddressState>
+            <ClientType>Dhcp</ClientType>
+            <NapCapable>true</NapCapable>
+            <DnsRR>PTR</DnsRR>
+            <DnsRegistration>Complete</DnsRegistration>
+            <LeaseExpiryTime>2015-09-01 06:58:10Z</LeaseExpiryTime>
+            <NapStatus>FullAccess</NapStatus>
+            <HostName>FMNRAHRRCW3077.fidelidademundial.com</HostName>
+          </Lease>
+          <Lease>
+            <IPAddress>172.22.100.66</IPAddress>
+            <ScopeId>172.22.100.0</ScopeId>
+            <ClientId>00-0b-cd-b5-e2-28</ClientId>
+            <AddressState>Active</AddressState>
+            <ClientType>Dhcp</ClientType>
+            <NapCapable>false</NapCapable>
+            <DnsRR>PTR</DnsRR>
+            <DnsRegistration>Complete</DnsRegistration>
+            <LeaseExpiryTime>2015-08-31 14:14:04Z</LeaseExpiryTime>
+            <NapStatus>FullAccess</NapStatus>
+            <HostName>HPFRB33002LD.</HostName>
+          </Lease>
+          <Lease>
+            <IPAddress>172.22.100.67</IPAddress>
+            <ScopeId>172.22.100.0</ScopeId>
+            <ClientId>00-19-99-d3-fb-18</ClientId>
+            <AddressState>Active</AddressState>
+            <ClientType>Dhcp</ClientType>
+            <NapCapable>false</NapCapable>
+            <DnsRR>PTR</DnsRR>
+            <DnsRegistration>Complete</DnsRegistration>
+            <LeaseExpiryTime>2015-09-01 07:24:11Z</LeaseExpiryTime>
+            <NapStatus>FullAccess</NapStatus>
+            <HostName>YLDE025189.fidelidademundial.com</HostName>
+          </Lease>
+          <Lease>
+            <IPAddress>172.22.100.68</IPAddress>
+            <ScopeId>172.22.100.0</ScopeId>
+            <ClientId>00-19-99-d3-c9-16</ClientId>
+            <AddressState>Active</AddressState>
+            <ClientType>Dhcp</ClientType>
+            <NapCapable>false</NapCapable>
+            <DnsRR>PTR</DnsRR>
+            <DnsRegistration>Complete</DnsRegistration>
+            <LeaseExpiryTime>2015-09-01 09:17:29Z</LeaseExpiryTime>
+            <NapStatus>FullAccess</NapStatus>
+            <HostName>YLDE023110.fidelidademundial.com</HostName>
+          </Lease>
+          <Lease>
+            <IPAddress>172.22.100.69</IPAddress>
+            <ScopeId>172.22.100.0</ScopeId>
+            <ClientId>00-19-99-d1-a7-5e</ClientId>
+            <AddressState>Active</AddressState>
+            <ClientType>Dhcp</ClientType>
+            <NapCapable>false</NapCapable>
+            <DnsRR>PTR</DnsRR>
+            <DnsRegistration>Complete</DnsRegistration>
+            <LeaseExpiryTime>2015-08-31 08:20:48Z</LeaseExpiryTime>
+            <NapStatus>FullAccess</NapStatus>
+            <HostName>YLDE022907.fidelidademundial.com</HostName>
+          </Lease>
+          <Lease>
+            <IPAddress>172.22.100.70</IPAddress>
+            <ScopeId>172.22.100.0</ScopeId>
+            <ClientId>00-19-99-d3-c9-f7</ClientId>
+            <AddressState>Active</AddressState>
+            <ClientType>Dhcp</ClientType>
+            <NapCapable>false</NapCapable>
+            <DnsRR>PTR</DnsRR>
+            <DnsRegistration>Complete</DnsRegistration>
+            <LeaseExpiryTime>2015-09-01 08:07:55Z</LeaseExpiryTime>
+            <NapStatus>FullAccess</NapStatus>
+            <HostName>YLDE023096.fidelidademundial.com</HostName>
+          </Lease>
+          <Lease>
+            <IPAddress>172.22.100.71</IPAddress>
+            <ScopeId>172.22.100.0</ScopeId>
+            <ClientId>00-19-99-d3-f6-29</ClientId>
+            <AddressState>Active</AddressState>
+            <ClientType>Dhcp</ClientType>
+            <NapCapable>false</NapCapable>
+            <DnsRR>PTR</DnsRR>
+            <DnsRegistration>Complete</DnsRegistration>
+            <LeaseExpiryTime>2015-08-27 08:47:45Z</LeaseExpiryTime>
+            <NapStatus>FullAccess</NapStatus>
+            <HostName>YLDE025180.fidelidademundial.com</HostName>
+          </Lease>
+          <Lease>
+            <IPAddress>172.22.100.72</IPAddress>
+            <ScopeId>172.22.100.0</ScopeId>
+            <ClientId>00-19-99-d3-cb-34</ClientId>
+            <AddressState>Active</AddressState>
+            <ClientType>Dhcp</ClientType>
+            <NapCapable>false</NapCapable>
+            <DnsRR>PTR</DnsRR>
+            <DnsRegistration>Complete</DnsRegistration>
+            <LeaseExpiryTime>2015-08-27 08:16:39Z</LeaseExpiryTime>
+            <NapStatus>FullAccess</NapStatus>
+            <HostName>YLDE023104.fidelidademundial.com</HostName>
+          </Lease>
+          <Lease>
+            <IPAddress>172.22.100.73</IPAddress>
+            <ScopeId>172.22.100.0</ScopeId>
+            <ClientId>00-19-99-d3-c9-60</ClientId>
+            <AddressState>Active</AddressState>
+            <ClientType>Dhcp</ClientType>
+            <NapCapable>false</NapCapable>
+            <DnsRR>PTR</DnsRR>
+            <DnsRegistration>Complete</DnsRegistration>
+            <LeaseExpiryTime>2015-08-31 14:22:52Z</LeaseExpiryTime>
+            <NapStatus>FullAccess</NapStatus>
+            <HostName>YLDE022915.fidelidademundial.com</HostName>
+          </Lease>
+          <Lease>
+            <IPAddress>172.22.100.74</IPAddress>
+            <ScopeId>172.22.100.0</ScopeId>
+            <ClientId>00-0f-20-fc-54-76</ClientId>
+            <AddressState>Active</AddressState>
+            <ClientType>Dhcp</ClientType>
+            <NapCapable>false</NapCapable>
+            <DnsRR>PTR</DnsRR>
+            <DnsRegistration>Complete</DnsRegistration>
+            <LeaseExpiryTime>2015-08-31 14:13:49Z</LeaseExpiryTime>
+            <NapStatus>FullAccess</NapStatus>
+            <HostName>HPFRB4230JXY.</HostName>
+          </Lease>
+          <Lease>
+            <IPAddress>172.22.100.75</IPAddress>
+            <ScopeId>172.22.100.0</ScopeId>
+            <ClientId>00-19-99-d3-ca-e9</ClientId>
+            <AddressState>Active</AddressState>
+            <ClientType>Dhcp</ClientType>
+            <NapCapable>false</NapCapable>
+            <DnsRR>PTR</DnsRR>
+            <DnsRegistration>Complete</DnsRegistration>
+            <LeaseExpiryTime>2015-09-01 06:36:57Z</LeaseExpiryTime>
+            <NapStatus>FullAccess</NapStatus>
+            <HostName>YLDE023099.fidelidademundial.com</HostName>
+          </Lease>
+          <Lease>
+            <IPAddress>172.22.100.76</IPAddress>
+            <ScopeId>172.22.100.0</ScopeId>
+            <ClientId>00-19-99-d1-a7-64</ClientId>
+            <AddressState>Active</AddressState>
+            <ClientType>Dhcp</ClientType>
+            <NapCapable>false</NapCapable>
+            <DnsRR>PTR</DnsRR>
+            <DnsRegistration>Complete</DnsRegistration>
+            <LeaseExpiryTime>2015-09-01 08:38:31Z</LeaseExpiryTime>
+            <NapStatus>FullAccess</NapStatus>
+            <HostName>YLDE022912.fidelidademundial.com</HostName>
+          </Lease>
+          <Lease>
+            <IPAddress>172.22.100.77</IPAddress>
+            <ScopeId>172.22.100.0</ScopeId>
+            <ClientId>10-1f-74-ec-08-9e</ClientId>
+            <AddressState>Active</AddressState>
+            <ClientType>Dhcp</ClientType>
+            <NapCapable>true</NapCapable>
+            <DnsRR>PTR</DnsRR>
+            <DnsRegistration>Complete</DnsRegistration>
+            <LeaseExpiryTime>2015-09-01 08:21:41Z</LeaseExpiryTime>
+            <NapStatus>FullAccess</NapStatus>
+            <HostName>FMNOLAIRCW3390.fidelidademundial.com</HostName>
+          </Lease>
+          <Lease>
+            <IPAddress>172.22.100.78</IPAddress>
+            <ScopeId>172.22.100.0</ScopeId>
+            <ClientId>00-19-99-d3-f9-03</ClientId>
+            <AddressState>Active</AddressState>
+            <ClientType>Dhcp</ClientType>
+            <NapCapable>false</NapCapable>
+            <DnsRR>PTR</DnsRR>
+            <DnsRegistration>Complete</DnsRegistration>
+            <LeaseExpiryTime>2015-08-31 14:38:17Z</LeaseExpiryTime>
+            <NapStatus>FullAccess</NapStatus>
+            <HostName>YLDE024928.fidelidademundial.com</HostName>
+          </Lease>
+          <Lease>
+            <IPAddress>172.22.100.79</IPAddress>
+            <ScopeId>172.22.100.0</ScopeId>
+            <ClientId>00-19-99-d3-fb-2f</ClientId>
+            <AddressState>Active</AddressState>
+            <ClientType>Dhcp</ClientType>
+            <NapCapable>false</NapCapable>
+            <DnsRR>PTR</DnsRR>
+            <DnsRegistration>Complete</DnsRegistration>
+            <LeaseExpiryTime>2015-09-01 07:45:10Z</LeaseExpiryTime>
+            <NapStatus>FullAccess</NapStatus>
+            <HostName>YLDE024118.fidelidademundial.com</HostName>
+          </Lease>
+          <Lease>
+            <IPAddress>172.22.100.80</IPAddress>
+            <ScopeId>172.22.100.0</ScopeId>
+            <ClientId>00-19-99-d3-f9-9c</ClientId>
+            <AddressState>Active</AddressState>
+            <ClientType>Dhcp</ClientType>
+            <NapCapable>false</NapCapable>
+            <DnsRR>PTR</DnsRR>
+            <DnsRegistration>Complete</DnsRegistration>
+            <LeaseExpiryTime>2015-08-30 13:38:08Z</LeaseExpiryTime>
+            <NapStatus>FullAccess</NapStatus>
+            <HostName>YLDE025191.fidelidademundial.com</HostName>
+          </Lease>
+          <Lease>
+            <IPAddress>172.22.100.81</IPAddress>
+            <ScopeId>172.22.100.0</ScopeId>
+            <ClientId>00-0f-20-fc-70-2a</ClientId>
+            <AddressState>Active</AddressState>
+            <ClientType>Dhcp</ClientType>
+            <NapCapable>false</NapCapable>
+            <DnsRR>PTR</DnsRR>
+            <DnsRegistration>Complete</DnsRegistration>
+            <LeaseExpiryTime>2015-08-31 15:36:00Z</LeaseExpiryTime>
+            <NapStatus>FullAccess</NapStatus>
+            <HostName>HPFRB4230JZ0.</HostName>
+          </Lease>
+          <Lease>
+            <IPAddress>172.22.100.83</IPAddress>
+            <ScopeId>172.22.100.0</ScopeId>
+            <ClientId>00-19-99-d1-a7-1c</ClientId>
+            <AddressState>Active</AddressState>
+            <ClientType>Dhcp</ClientType>
+            <NapCapable>false</NapCapable>
+            <DnsRR>PTR</DnsRR>
+            <DnsRegistration>Complete</DnsRegistration>
+            <LeaseExpiryTime>2015-08-27 17:45:33Z</LeaseExpiryTime>
+            <NapStatus>FullAccess</NapStatus>
+            <HostName>YLDE022908.fidelidademundial.com</HostName>
+          </Lease>
+          <Lease>
+            <IPAddress>172.22.100.84</IPAddress>
+            <ScopeId>172.22.100.0</ScopeId>
+            <ClientId>00-19-99-d3-f6-4a</ClientId>
+            <AddressState>Active</AddressState>
+            <ClientType>Dhcp</ClientType>
+            <NapCapable>false</NapCapable>
+            <DnsRR>PTR</DnsRR>
+            <DnsRegistration>Complete</DnsRegistration>
+            <LeaseExpiryTime>2015-09-01 07:43:39Z</LeaseExpiryTime>
+            <NapStatus>FullAccess</NapStatus>
+            <HostName>YLDE025879.fidelidademundial.com</HostName>
+          </Lease>
+          <Lease>
+            <IPAddress>172.22.100.86</IPAddress>
+            <ScopeId>172.22.100.0</ScopeId>
+            <ClientId>00-19-99-d3-f8-18</ClientId>
+            <AddressState>Active</AddressState>
+            <ClientType>Dhcp</ClientType>
+            <NapCapable>false</NapCapable>
+            <DnsRR>PTR</DnsRR>
+            <DnsRegistration>Complete</DnsRegistration>
+            <LeaseExpiryTime>2015-09-01 08:49:51Z</LeaseExpiryTime>
+            <NapStatus>FullAccess</NapStatus>
+            <HostName>YLDE025877.fidelidademundial.com</HostName>
+          </Lease>
+          <Lease>
+            <IPAddress>172.22.100.87</IPAddress>
+            <ScopeId>172.22.100.0</ScopeId>
+            <ClientId>00-19-99-d3-fb-3c</ClientId>
+            <AddressState>Active</AddressState>
+            <ClientType>Dhcp</ClientType>
+            <NapCapable>false</NapCapable>
+            <DnsRR>PTR</DnsRR>
+            <DnsRegistration>Complete</DnsRegistration>
+            <LeaseExpiryTime>2015-09-01 07:56:28Z</LeaseExpiryTime>
+            <NapStatus>FullAccess</NapStatus>
+            <HostName>YLDE024169.fidelidademundial.com</HostName>
+          </Lease>
+          <Lease>
+            <IPAddress>172.22.100.88</IPAddress>
+            <ScopeId>172.22.100.0</ScopeId>
+            <ClientId>00-19-99-d3-c9-d9</ClientId>
+            <AddressState>Active</AddressState>
+            <ClientType>Dhcp</ClientType>
+            <NapCapable>false</NapCapable>
+            <DnsRR>PTR</DnsRR>
+            <DnsRegistration>Complete</DnsRegistration>
+            <LeaseExpiryTime>2015-09-01 07:43:27Z</LeaseExpiryTime>
+            <NapStatus>FullAccess</NapStatus>
+            <HostName>YLDE022905.fidelidademundial.com</HostName>
+          </Lease>
+          <Lease>
+            <IPAddress>172.22.100.89</IPAddress>
+            <ScopeId>172.22.100.0</ScopeId>
+            <ClientId>00-19-99-d1-a7-42</ClientId>
+            <AddressState>Active</AddressState>
+            <ClientType>Dhcp</ClientType>
+            <NapCapable>false</NapCapable>
+            <DnsRR>PTR</DnsRR>
+            <DnsRegistration>Complete</DnsRegistration>
+            <LeaseExpiryTime>2015-08-31 07:52:58Z</LeaseExpiryTime>
+            <NapStatus>FullAccess</NapStatus>
+            <HostName>YLDE022909.fidelidademundial.com</HostName>
+          </Lease>
+          <Lease>
+            <IPAddress>172.22.100.90</IPAddress>
+            <ScopeId>172.22.100.0</ScopeId>
+            <ClientId>00-19-99-d3-c9-12</ClientId>
+            <AddressState>Active</AddressState>
+            <ClientType>Dhcp</ClientType>
+            <NapCapable>false</NapCapable>
+            <DnsRR>PTR</DnsRR>
+            <DnsRegistration>Complete</DnsRegistration>
+            <LeaseExpiryTime>2015-09-01 08:04:31Z</LeaseExpiryTime>
+            <NapStatus>FullAccess</NapStatus>
+            <HostName>YLDE022904.fidelidademundial.com</HostName>
+          </Lease>
+          <Lease>
+            <IPAddress>172.22.100.91</IPAddress>
+            <ScopeId>172.22.100.0</ScopeId>
+            <ClientId>00-19-99-d1-a7-1d</ClientId>
+            <AddressState>Active</AddressState>
+            <ClientType>Dhcp</ClientType>
+            <NapCapable>false</NapCapable>
+            <DnsRR>PTR</DnsRR>
+            <DnsRegistration>Complete</DnsRegistration>
+            <LeaseExpiryTime>2015-08-31 15:01:31Z</LeaseExpiryTime>
+            <NapStatus>FullAccess</NapStatus>
+            <HostName>YLDE022910.fidelidademundial.com</HostName>
+          </Lease>
+          <Lease>
+            <IPAddress>172.22.100.93</IPAddress>
+            <ScopeId>172.22.100.0</ScopeId>
+            <ClientId>00-19-99-d3-cb-33</ClientId>
+            <AddressState>Active</AddressState>
+            <ClientType>Dhcp</ClientType>
+            <NapCapable>false</NapCapable>
+            <DnsRR>PTR</DnsRR>
+            <DnsRegistration>Complete</DnsRegistration>
+            <LeaseExpiryTime>2015-09-01 08:57:59Z</LeaseExpiryTime>
+            <NapStatus>FullAccess</NapStatus>
+            <HostName>YLDE023101.fidelidademundial.com</HostName>
+          </Lease>
+          <Lease>
+            <IPAddress>172.22.100.97</IPAddress>
+            <ScopeId>172.22.100.0</ScopeId>
+            <ClientId>00-0b-cd-b6-6c-31</ClientId>
+            <AddressState>Active</AddressState>
+            <ClientType>Dhcp</ClientType>
+            <NapCapable>false</NapCapable>
+            <DnsRR>PTR</DnsRR>
+            <DnsRegistration>Complete</DnsRegistration>
+            <LeaseExpiryTime>2015-08-31 16:42:10Z</LeaseExpiryTime>
+            <NapStatus>FullAccess</NapStatus>
+            <HostName>HPFRB33106YH.</HostName>
+          </Lease>
+          <Lease>
+            <IPAddress>172.22.100.100</IPAddress>
+            <ScopeId>172.22.100.0</ScopeId>
+            <ClientId>00-19-99-d3-c9-0e</ClientId>
+            <AddressState>Active</AddressState>
+            <ClientType>Dhcp</ClientType>
+            <NapCapable>false</NapCapable>
+            <DnsRR>PTR</DnsRR>
+            <DnsRegistration>Complete</DnsRegistration>
+            <LeaseExpiryTime>2015-08-31 12:00:36Z</LeaseExpiryTime>
+            <NapStatus>FullAccess</NapStatus>
+            <HostName>YLDE022903.fidelidademundial.com</HostName>
+          </Lease>
+          <Lease>
+            <IPAddress>172.22.100.106</IPAddress>
+            <ScopeId>172.22.100.0</ScopeId>
+            <ClientId>e4-11-5b-50-f6-9b</ClientId>
+            <AddressState>Active</AddressState>
+            <ClientType>Dhcp</ClientType>
+            <NapCapable>true</NapCapable>
+            <DnsRR>PTR</DnsRR>
+            <DnsRegistration>Complete</DnsRegistration>
+            <LeaseExpiryTime>2015-09-01 09:12:14Z</LeaseExpiryTime>
+            <NapStatus>FullAccess</NapStatus>
+            <HostName>FMNRAHRRCW3193.fidelidademundial.com</HostName>
+          </Lease>
+        </Leases>
+      </Scope>
+    </Scopes>
+  </IPv4>
+</DHCPServer>
