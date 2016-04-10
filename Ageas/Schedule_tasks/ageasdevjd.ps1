@@ -5,7 +5,7 @@
 ##
 
 $domain = "Ageasdev.com"
-$password = "muksmuks9" | ConvertTo-SecureString -asPlainText -Force
+$password = "!!!!!!!!!!!!!!!!!9" | ConvertTo-SecureString -asPlainText -Force
 $username = "$domain\x333867" 
 $credential = New-Object System.Management.Automation.PSCredential($username,$password)
 Add-Computer -DomainName $domain -Credential $credential

@@ -5,7 +5,7 @@
 ##
 
 $domain = "Ageasdev.com"
-$password = "muksmuks9" | ConvertTo-SecureString -asPlainText -Force
+$password = "!!!!!!!!!!!!!!!!!9" | ConvertTo-SecureString -asPlainText -Force
 $username = "$domain\x333867" 
 $credential = New-Object System.Management.Automation.PSCredential($username,$password)
 Add-Computer -DomainName $domain -Credential $credential
@@ -40,11 +40,11 @@ Copy-Item \\sdazfs01\WITNESS\off.xml C:\Packages\Plugins\ageasdev\off.xml -Force
 Start-Sleep -Seconds 3
 $xmk= get-conten tC:\Packages\Plugins\ageasdev\on.xml | out-string
 
-Register-ScheduledTask -Xml $xmk  -TaskName "in" -User ageasdev\x333867 -Password muksmuks9 –Force
+Register-ScheduledTask -Xml $xmk  -TaskName "in" -User ageasdev\x333867 -Password !!!!!!!!!!!!!!!!!9 –Force
 
 $xmo= get-content C:\Packages\Plugins\ageasdev\on.xml | out-string
 
-Register-ScheduledTask -Xml $xmo  -TaskName "out" -User ageasdev\x333867 -Password muksmuks9 –Force
+Register-ScheduledTask -Xml $xmo  -TaskName "out" -User ageasdev\x333867 -Password !!!!!!!!!!!!!!!!!9 –Force
 
 #dotnet
 powershell.exe -ExecutionPolicy Unrestricted -file \\sdazfs01\WITNESS\dotnetdev.ps1
