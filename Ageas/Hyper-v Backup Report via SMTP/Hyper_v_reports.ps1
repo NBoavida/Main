@@ -26,7 +26,7 @@ $att3 = new-object Net.Mail.Attachment($file3)
 $msg = new-object Net.Mail.MailMessage
 $smtp = new-object Net.Mail.SmtpClient($smtpServer)
 $msg.From = "Hyper-v@doit.dev"
-$msg.To.Add("fredericofrazao.agap2@millenniumbcp.pt, x337973@bcpcorp.net, x030065@bcpcorp.net, x100465@bcpcorp.net")
+$msg.To.Add("f, x337973@bcpcorp.net, x030065@bcpcorp.net, x100465@bcpcorp.net")
 $msg.Subject = "Hyper-V backups logs $batch_Date"
 $msg.Body = "Hyper-V Export Log"
 $msg.Attachments.Add($att)

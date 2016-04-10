@@ -143,7 +143,7 @@ foreach($entry in $backupsFiles)
 #$smtpClient.Host = 'smtp.gmail.com'
 #$smtpClient.Port = 587
 #$smtpClient.EnableSsl = $true
-#$SMTPClient.Credentials = New-Object System.Net.NetworkCredential("frederico.frazao", "welcome!"); #gmail user sem @gmail.com
+#$SMTPClient.Credentials = New-Object System.Net.NetworkCredential("frederico.frazao", "!"); #gmail user sem @gmail.com
 #
 #$date = get-date
 #$emailfrom = "frederico.frazao@gmail.com"
