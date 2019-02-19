@@ -4,7 +4,6 @@ pipeline {
     stage('dev') {
       steps {
         echo 'hello'
-        git(branch: 'my-new-config', url: 'https://github.com/fredericofrazao/Main/tree/my-new-config', changelog: true, poll: true)
         powershell(script: 'dir c:\\', returnStdout: true, returnStatus: true)
       }
     }
