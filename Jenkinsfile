@@ -13,16 +13,21 @@ pipeline {
 
           }
         }
-        stage('qa') {
+        stage('step2') {
           steps {
             echo 'this is qa'
           }
         }
-        stage('stage') {
+        stage('step3') {
           steps {
             sleep 5
           }
         }
+      }
+    }
+    stage('qa') {
+      steps {
+        echo 'this is qa'
       }
     }
   }
