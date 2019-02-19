@@ -4,6 +4,7 @@ pipeline {
     stage('dev') {
       steps {
         echo 'hello'
+        input 'lets go?'
       }
     }
   }
