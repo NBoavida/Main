@@ -13,8 +13,16 @@ pipeline {
           }
         }
         stage('step2') {
+          agent {
+            node {
+              label '1'
+            }
+
+          }
           steps {
             echo 'this is step2'
+            build(job: '1', propagate: true)
+            input 'ok'
           }
         }
         stage('step3') {
@@ -31,7 +39,7 @@ pipeline {
             echo 'this is qa'
           }
         }
-        stage('') {
+        stage('error') {
           steps {
             echo 'step1 qa'
           }
@@ -45,7 +53,7 @@ pipeline {
             echo 'qs'
           }
         }
-        stage('') {
+        stage('error') {
           steps {
             echo 'step1 qs'
           }
@@ -59,7 +67,7 @@ pipeline {
             echo 'test'
           }
         }
-        stage('') {
+        stage('error') {
           steps {
             echo 'step1 test'
           }
@@ -73,7 +81,7 @@ pipeline {
             echo 'this is stage'
           }
         }
-        stage('') {
+        stage('error') {
           steps {
             echo 'step 1 stage'
           }
@@ -87,12 +95,12 @@ pipeline {
             echo 'this is prod'
           }
         }
-        stage('') {
+        stage('error') {
           steps {
             echo 'step 1'
           }
         }
-        stage('') {
+        stage('error') {
           steps {
             echo 'deploy'
           }
