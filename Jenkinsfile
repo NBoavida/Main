@@ -5,6 +5,10 @@ pipeline {
       steps {
         echo 'hello'
         input 'lets go?'
+        catchError() {
+          sleep 5
+        }
+
       }
     }
   }
