@@ -18,6 +18,11 @@ pipeline {
             echo 'this is qa'
           }
         }
+        stage('stage') {
+          steps {
+            sleep 5
+          }
+        }
       }
     }
   }
